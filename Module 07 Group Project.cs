@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        Dictionary<string, List<string>> myDictionary = new Dictionary<string, List<string>> // establishes the dictionary
+        Dictionary<string, List<string>> myDictionary = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase) // establishes the dictionary
         {
             { "Monkey", new List<string> { "Orangutan", "Mandrill" } },
             { "Lion", new List<string> { "Congo", "European" } },
@@ -105,3 +105,4 @@ class Program
         }
     }
 }
+
