@@ -20,7 +20,7 @@ class Program
             Console.WriteLine("\nDictionary of Animals");
             Console.WriteLine("a. Populate the Dictionary"); // add keys and values to the group.
             Console.WriteLine("b. Display Dictionary Contents"); // displays the entirety of the dictionary
-            Console.WriteLine("c. Remove a Key"); // removes a key, case-sensitive. if anyone knows how to change that please edit it
+            Console.WriteLine("c. Remove a Key"); // removes a key, case-sensitive. if anyone knows how to change that please edit it EDIT: peter added an ordinal ignore case, which should fix the issue. thanks peter!
             Console.WriteLine("d. Add a New Key and Value"); // adds a new key and value to the group
             Console.WriteLine("e. Add a Value to an Existing Key"); // edits an already existing key by adding a new element to it
             Console.WriteLine("f. Sort the Keys"); // organizes the keys alphabetically 
@@ -105,4 +105,5 @@ class Program
         }
     }
 }
+
 
