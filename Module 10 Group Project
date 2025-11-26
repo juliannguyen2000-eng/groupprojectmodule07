@@ -1,1 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+
+public class Contractor
+{
+    private string contractorName;
+    private int contractorNumber;
+    private DateTime contractorStartDate;
+
+    public Contractor()
+    {
+        contractorName = "";
+        contractorNumber = 0;
+        contractorStartDate = DateTime.Now;
+    }
+ public Contractor(string name, int number, DateTime startDate)
+    {
+        contractorName = name;
+        contractorNumber = number;
+        contractorStartDate = startDate;
+    }
