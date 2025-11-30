@@ -110,7 +110,7 @@ class Program
             while(true)
             {
                 Console.Write("Day shift or Night shift? (1 = Day, 2 = Night): ");
-                if(int.TryParse(Console.ReadLine(), out shift) && (shift == 1 || shift == 2)
+                if(int.TryParse(Console.ReadLine(), out shift) && (shift == 1 || shift == 2))
                     break;
                 Console.WriteLine(" invalid shift number, please enter 1 or 2");
             }
@@ -144,7 +144,7 @@ class Program
             while(true)
             {
                 Console.Write("Enter hours worked to compute pay: ");
-                if(flaot.TryParse(Console.ReadLine(), out hours) && hours >= 0);
+                if(float.TryParse(Console.ReadLine(), out hours) && hours >= 0)
                     break;
                 Console.WriteLine(" invalid hours, please enter again");
             }
