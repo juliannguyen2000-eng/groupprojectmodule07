@@ -90,17 +90,38 @@ class Program
             Console.Write("Contractor Name: ");
             string name = Console.ReadLine();
 
-            Console.Write("Contractor Number: ");
-            int number = int.Parse(Console.ReadLine());
-
-            Console.Write("Start Date (MM/DD/YYYY): ");
-            DateTime date = DateTime.Parse(Console.ReadLine());
-
-            Console.Write("Day shift or Night shift? (1 = Day, 2 = Night): ");
-            int shift = int.Parse(Console.ReadLine());
-
-            Console.Write("Hourly Pay: ");
-            double rate = double.Parse(Console.ReadLine());
+            int number;
+            while(true)
+            {
+                Console.Write("Contractor Number: ");
+                if(int.TryParse(Console.ReadLine(), out number))
+                    break;
+                Console.WriteLine(" invalid number, please enter again");
+            }
+            DateTime date;
+            while(true)
+            {
+                Console.Write("Start Date (MM/DD/YYYY): ");
+                if(DateTime.TryParse(Console.ReadLine(), out date))
+                    break;
+                Console.WriteLine(" invalid date, please enter again");
+            }
+            int shift;
+            while(true)
+            {
+                Console.Write("Day shift or Night shift? (1 = Day, 2 = Night): ");
+                if(int.TryParse(Console.ReadLine(), out shift) && (shift == 1 || shift == 2)
+                    break;
+                Console.WriteLine(" invalid shift number, please enter 1 or 2");
+            }
+            double rate;
+            while(true)
+            {
+                Console.Write("Hourly Pay: ");
+                if(double.TryParse(Console.ReadLine(), out rate) && rate >= 0);
+                    break;
+                Console.WriteLine(" invalid rate, please enter again");
+            }
 
             Subcontractor sub = new Subcontractor(name, number, date, shift, rate);
             subs.Add(sub);
@@ -119,8 +140,14 @@ class Program
             Console.WriteLine($"Shift: {s.GetShift()}");
             Console.WriteLine($"Hourly Rate: ${s.GetHourlyRate():0.00}");
 
-            Console.Write("Enter hours worked to compute pay: ");
-            float hours = float.Parse(Console.ReadLine());
+            float hours;
+            while(true)
+            {
+                Console.Write("Enter hours worked to compute pay: ");
+                if(flaot.TryParse(Console.ReadLine(), out hours) && hours >= 0);
+                    break;
+                Console.WriteLine(" invalid hours, please enter again");
+            }
 
             float pay = s.ComputePay(hours);
             Console.WriteLine($"Total Pay: ${pay:0.00}");
