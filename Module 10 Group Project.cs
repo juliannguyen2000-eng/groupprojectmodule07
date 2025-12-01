@@ -19,7 +19,7 @@ class Contractor
         contractorName = name;
         contractorNumber = number;
         contractorStartDate = startDate;
-    } 
+    }
     // thank you ozalers for doing this previous section of the code!
 
     // this is an accessor method. this lets the code outside the body read the private variables. private variables are variables which can be only be accessed from within the body of the same class or structure.
@@ -91,36 +91,36 @@ class Program
             string name = Console.ReadLine();
 
             int number;
-            while(true)
+            while (true)
             {
                 Console.Write("Contractor Number: ");
-                if(int.TryParse(Console.ReadLine(), out number))
+                if (int.TryParse(Console.ReadLine(), out number))
                     break;
-                Console.WriteLine(" invalid number, please enter again");
+                Console.WriteLine("Invalid Number. Please enter contractor Number.");
             }
             DateTime date;
-            while(true)
+            while (true)
             {
                 Console.Write("Start Date (MM/DD/YYYY): ");
-                if(DateTime.TryParse(Console.ReadLine(), out date))
+                if (DateTime.TryParse(Console.ReadLine(), out date))
                     break;
-                Console.WriteLine(" invalid date, please enter again");
+                Console.WriteLine("Invalid Date. Please enter start date.");
             }
             int shift;
-            while(true)
+            while (true)
             {
                 Console.Write("Day shift or Night shift? (1 = Day, 2 = Night): ");
-                if(int.TryParse(Console.ReadLine(), out shift) && (shift == 1 || shift == 2))
+                if (int.TryParse(Console.ReadLine(), out shift) && (shift == 1 || shift == 2))
                     break;
-                Console.WriteLine(" invalid shift number, please enter 1 or 2");
+                Console.WriteLine("Invalid Shift. Please enter either 1 or 2.");
             }
             double rate;
-            while(true)
+            while (true)
             {
                 Console.Write("Hourly Pay: ");
-                if(double.TryParse(Console.ReadLine(), out rate) && rate >= 0);
-                    break;
-                Console.WriteLine(" invalid rate, please enter again");
+                if (double.TryParse(Console.ReadLine(), out rate) && rate >= 0) ;
+                break;
+                Console.WriteLine("Invalid Rate. Please enter Hourly Pay.");
             }
 
             Subcontractor sub = new Subcontractor(name, number, date, shift, rate);
@@ -141,12 +141,12 @@ class Program
             Console.WriteLine($"Hourly Rate: ${s.GetHourlyRate():0.00}");
 
             float hours;
-            while(true)
+            while (true)
             {
                 Console.Write("Enter hours worked to compute pay: ");
-                if(float.TryParse(Console.ReadLine(), out hours) && hours >= 0)
+                if (float.TryParse(Console.ReadLine(), out hours) && hours >= 0)
                     break;
-                Console.WriteLine(" invalid hours, please enter again");
+                Console.WriteLine("Invalid hours. Please enter amount of hours.");
             }
 
             float pay = s.ComputePay(hours);
